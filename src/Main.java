@@ -1,6 +1,14 @@
+import game.GUI;
+import Phones.Phones;
+
 public class Main implements Runnable {
 
     GUI gui = new GUI();
+
+    Phones workingPhones = new Phones();
+    Phones brokenPhones = new Phones();
+
+    byte testedPhonesCounter = 0;
 
     public static void main(String[] args) {
 
@@ -10,9 +18,12 @@ public class Main implements Runnable {
     @Override
     public void run() {
 
-        while (true) {
+        while (testedPhonesCounter < 5) {
 
             gui.repaint();
+
+            // workingPhones.add(new WorkingPhones(phoneSerialNumber));
+            // brokenPhones.add(new BrokenPhones(phoneSerialNumber));
         }
     }
 }
