@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class PhoneBrand {
 
-    String[] phoneBrands = {"Samsung S21", "iPhone 12", "Huawei p30", "Mi 10 Lite", "Redmi 9", "Poco X3 NFC"};
+    String[] phoneBrands = {"Samsung Galaxy S6", "iPhone 7 plus", "Huawei P30", "Mi 10 Lite", "Redmi 9", "Poco X3 NFC"};
 
     Random random = new Random();
 

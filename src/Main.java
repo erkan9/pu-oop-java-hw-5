@@ -1,5 +1,8 @@
 import game.gamelogic.GameLogic;
 
+/**
+ * @author Erkan Kamber
+ */
 public class Main implements Runnable {
 
     GameLogic gamelogic = new GameLogic();

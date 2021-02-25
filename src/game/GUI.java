@@ -12,10 +12,10 @@ import java.util.Random;
 public class GUI extends JFrame {
 
     SerialNumber serialNumber = new SerialNumber();
-    PhoneBrand phoneBrand     = new PhoneBrand();
+    PhoneBrand phoneBrands     = new PhoneBrand();
     Random random             = new Random();
 
-    public final int[][] pixelBoxes = new int[64][64];
+    private final int[][] pixelBoxes = new int[64][64];
 
     protected final byte BOX_WIDTH_HEIGHT = 14;
 
@@ -35,9 +35,10 @@ public class GUI extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
         this.setResizable(false);
+        this.setLocation(400, 80);
 
         this.phoneSerialNumber = this.serialNumber.serialNumberSetter();
-        this.testedPhoneBrand =  this.phoneBrand.phoneBrandSetter();
+        this.testedPhoneBrand  =  this.phoneBrands.phoneBrandSetter();
 
         Board board = new Board(this);
         this.setContentPane(board);
@@ -53,10 +54,6 @@ public class GUI extends JFrame {
 
         System.out.printf("%s - %s\n\n", this.testedPhoneBrand, this.phoneSerialNumber);
     }
-
-    public String getPhoneSerialNumber() { return this.phoneSerialNumber; }
-
-    public String getTestedPhoneBrand()  { return this.testedPhoneBrand; }
 
     public int[][] getPixelBoxes()       { return this.pixelBoxes; }
 
@@ -86,7 +83,6 @@ public class GUI extends JFrame {
             showInfo();
         }
     }
-
 
     /**
      * Method to show information when Broken pixel is found
@@ -155,14 +151,13 @@ public class GUI extends JFrame {
         }
     }
 
-
     /**
      * Method that resets Serial Number, Phone Brand and Pixels
      */
     public void resetBoardWhenPixelsAreChecked() {
 
         this.phoneSerialNumber = this.serialNumber.serialNumberSetter();
-        this.testedPhoneBrand  = this.phoneBrand.phoneBrandSetter();
+        this.testedPhoneBrand  = this.phoneBrands.phoneBrandSetter();
 
         this.brokenPixelCounter = 0;
         this.clickCounter = 0;

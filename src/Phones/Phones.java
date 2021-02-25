@@ -2,12 +2,12 @@ package Phones;
 
 public class Phones<T> {
 
-    private byte index = 0;
-    private final Object[] collection;
+    private byte serialNumberIndex = 0;
+    private final Object[] serialNumberCollection;
 
     public Phones() {
 
-        this.collection = new Object[5];
+        this.serialNumberCollection = new Object[5];
     }
 
     /**
@@ -16,7 +16,7 @@ public class Phones<T> {
      */
     public void add(Object element) {
 
-        this.collection[this.index++] = element;
+        this.serialNumberCollection[this.serialNumberIndex++] = element;
     }
 
     /**
@@ -25,6 +25,6 @@ public class Phones<T> {
      * @return The Serial Number
      */
     public T get(int index) {
-        return (T)this.collection[index];
+        return (T)this.serialNumberCollection[index];
     }
 }

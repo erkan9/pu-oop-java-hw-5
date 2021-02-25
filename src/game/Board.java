@@ -7,22 +7,23 @@ import java.awt.*;
 
 public class Board extends JPanel {
 
+    GUI gui;
     Font serialNumberFont = new Font("Tacoma", Font.BOLD, 12);
 
     private final byte BOX_WIDTH_HEIGHT;
     private final int[][] pixelBoxes;
 
-    private final String phoneSerialNumber;
-    private final String phoneBrand;
-
     public Board(GUI gui) {
 
+        this.gui = gui;
         this.BOX_WIDTH_HEIGHT = gui.getBOX_WIDTH_HEIGHT();
         this.pixelBoxes = gui.getPixelBoxes();
-        this.phoneSerialNumber = gui.getPhoneSerialNumber();
-        this.phoneBrand = gui.getTestedPhoneBrand();
     }
 
+    /**
+     * Method that paints the components
+     * @param g Object of Graphics
+     */
     @Override
     public void paintComponent(Graphics g) {
 
@@ -42,8 +43,8 @@ public class Board extends JPanel {
 
         g.setFont(this.serialNumberFont);
         g.setColor(Color.BLACK);
-        g.drawString(this.phoneSerialNumber, 420, 11);
-        g.drawString(this.phoneBrand, 5,11);
+        g.drawString(this.gui.phoneSerialNumber, 420, 11);
+        g.drawString(this.gui.testedPhoneBrand, 5,11);
     }
 
     /**
